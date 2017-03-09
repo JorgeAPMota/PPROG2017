@@ -55,7 +55,7 @@ System.out.println("Listagem    dos    nomes    dos    trabalhadores existentes,
 "vencimentos:");
 for (int i = 0; i<trabalhadores.length; i++){
     if(trabalhadores[i]!=null){
- //       System.out.println(trabalhadores[i].getNome(), trabalhadores[i].calcularVencimento());
+        System.out.println("Nome=" + trabalhadores[i].getNome() + "Vencimento=" + trabalhadores[i].calcularVencimento());
     }
 }
 
