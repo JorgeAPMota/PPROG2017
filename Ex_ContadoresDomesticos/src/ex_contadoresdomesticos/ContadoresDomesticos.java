@@ -9,13 +9,24 @@ package ex_contadoresdomesticos;
  *
  * @author Jorge Mota
  */
-public class ContadoresDomesticos {
 
+public abstract class ContadoresDomesticos {
+
+   public String nomeCliente;
+   public int identificador; 
+   public float consumo;
+   
+   
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
     }
+    
+    
+
+    
+}
     
 }
