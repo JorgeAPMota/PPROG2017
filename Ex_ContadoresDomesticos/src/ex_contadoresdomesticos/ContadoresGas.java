@@ -12,17 +12,24 @@ package ex_contadoresdomesticos;
 public class ContadoresGas extends ContadoresDomesticos {
     
     static float custoUnitario = 0.8f; 
-    static float consumoGas;
-    static float consumoTotalGas;
+    static float consumoTotalGas; 
     
 //  O  custo  do  consumo  de  gás é  dado  pela seguinte  fórmula:  
 //  custo  unitário  x  consumo,  sendo  o  custo  unitário  igual  a  0.8€/m3. 
     
+    /** Constructor completo do ContadorGas
+     * 
+     * @param nomeCliente
+     * @param consumo 
+     */
+    public ContadoresGas (String nomeCliente, int consumo){
+        super(nomeCliente, consumo);
+    }
     
     
     private float contagemGas(){
-    consumoTotalGas=custoUnitario*consumoGas;
-        System.out.println("O consumo de gás foi de" + consumoTotalGas); 
+    consumoTotalGas=custoUnitario*consumo;
+        System.out.println("O consumo de gás foi de" + consumoTotalGas + "€"); 
         return consumoTotalGas;
 }
     

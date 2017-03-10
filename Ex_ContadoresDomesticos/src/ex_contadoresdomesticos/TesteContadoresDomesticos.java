@@ -11,6 +11,9 @@ package ex_contadoresdomesticos;
  */
 public class TesteContadoresDomesticos {
     
+    ContadoresGas g1 = new ContadorGas ("Manel", 10);
+    
+    
 /**3.Crie uma nova classe para testar as classes implementadas, satisfazendo os seguintes requisitos:
 a)Construa  objetos  de  cada  uma  das  classes  instanciáveis  e  guarde-os  num  contentor  de 
 objetos do tipo array.

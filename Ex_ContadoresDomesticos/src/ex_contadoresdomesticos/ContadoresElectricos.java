@@ -9,6 +9,12 @@ package ex_contadoresdomesticos;
  *
  * @author Jorge Mota
  */
-public class ContadoresElectricos {
+public class ContadoresElectricos extends ContadoresDomesticos {
+
+    
+public ContadoresElectricos (nomeCliente, consumo){
+    super(nomeCliente, consumo);    
+}
+
     
 }
