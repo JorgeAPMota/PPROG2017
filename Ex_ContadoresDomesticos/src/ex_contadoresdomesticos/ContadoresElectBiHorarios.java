@@ -15,12 +15,20 @@ public class ContadoresElectBiHorarios extends ContadoresElectricos {
     static float custoForaVazio = 0.14f;
     int consumoForaHorasVazio = 0 ;
     int consumoHorasVazio = consumo;
+    static float consumoFinal;
     
-public ContadoresElectBiHorarios (String nome, int consumoHorasVazio , int consumoForaHorasVazio){
-    super(nome, consumoHorasVazio);
+public ContadoresElectBiHorarios (String nomeCliente, int consumoHorasVazio , int consumoForaHorasVazio){
+    super(nomeCliente, consumoHorasVazio);
+    this.nomeCliente = nomeCliente;
+    this.consumoHorasVazio = consumoHorasVazio;
     this.consumoForaHorasVazio = consumoForaHorasVazio;
 }    
     
+@Override
+public float calculoConsumoFinal(){
+    consumoFinal = (consumoHorasVazio * custoEmVazio) + (consumoForaHorasVazio * custoForaVazio);
+return consumoFinal;    
+ }
 
     
 }

@@ -18,6 +18,7 @@ public abstract class ContadoresDomesticos {
    public int mes;
    
    public static final int IDENTIFICADOR_POR_OMISSAO = 0;
+   public static final int CONSUMO_POR_OMISSAO = 0;
    
     /**
      * @param args the command line arguments
@@ -31,10 +32,13 @@ public abstract class ContadoresDomesticos {
      * Constructor cheio do contador.
      *
      * @param identificador o nr do contador
+     * @param consumo 
+     * @param nomeCliente
      */
-    public ContadoresDomesticos(int identificador, int consumo) {
-        this.identificador = identificador;
+    public ContadoresDomesticos(String nomeCliente, int consumo, int identificador ) {
+        this.nomeCliente = nomeCliente;
         this.consumo = consumo;
+        this.identificador = identificador;
     }
     
     /**
@@ -43,7 +47,10 @@ public abstract class ContadoresDomesticos {
      */
     public ContadoresDomesticos(){
         identificador = IDENTIFICADOR_POR_OMISSAO;
+        consumo = CONSUMO_POR_OMISSAO;
     }
+    
+    public abstract float calculoConsumoFinal();
     
     
 }
