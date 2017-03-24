@@ -54,14 +54,14 @@ public class Retangulo extends Figura {
                 comprimento, largura, super.toString());
     }
 
-//    @Override
-//    public boolean equals(Object outroObjeto) {
-//        if (!super.equals(outroObjeto)) {
-//            return false;
-//        }
-//        Retangulo r = (Retangulo) outroObjeto;
-//        return this.comprimento == r.getComprimento() && this.largura == r.getLargura();
-//    }
+    @Override
+    public boolean equals(Object outroObjeto) {
+        if (!super.equals(outroObjeto)) {
+            return false;
+        }
+        Retangulo r = (Retangulo) outroObjeto;
+        return this.comprimento == r.getComprimento() && this.largura == r.getLargura();
+    }
 
     @Override
     public double calcularArea() {

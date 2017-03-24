@@ -40,14 +40,14 @@ public class Circulo extends Figura {
         return String.format("Círculo: raio=%.1f %s", raio, super.toString());
     }
     
-//    @Override
-//    public boolean equals(Object outroObjeto) {
-//        if (!super.equals(outroObjeto)) {
-//            return false;
-//        }
-//        Circulo c = (Circulo) outroObjeto;
-//        return this.raio == c.getRaio();
-//    }
+    @Override
+    public boolean equals(Object outroObjeto) {
+        if (!super.equals(outroObjeto)) {
+            return false;
+        }
+        Circulo c = (Circulo) outroObjeto;
+        return this.raio == c.getRaio();
+    }
     
     @Override
     public double calcularArea() {

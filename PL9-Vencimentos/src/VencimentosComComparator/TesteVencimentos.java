@@ -1,5 +1,6 @@
 package VencimentosComComparator;
 
+import java.text.Collator;
 import vencimentos.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,8 +48,8 @@ public class TesteVencimentos {
         Comparator<Trabalhador> criterioVencimento = new Comparator<Trabalhador>() {
 
             @Override
-            public int compare() {
-                float vencimento1 = this.calcularVencimento();
+            public int compare(Trabalhador trabalhador, Trabalhador outroTrabalhador) {
+                float vencimento1 = trabalhador.calcularVencimento();
                 float vencimento2 = outroTrabalhador.calcularVencimento();
 
                 if (vencimento1 < vencimento2) {
@@ -59,12 +60,32 @@ public class TesteVencimentos {
                     return 0;
                 }
             }
-        }
+        };
 
         Collections.sort(trabs, criterioVencimento);
         listar(trabs);
 
         Collections.sort(trabs, Collections.reverseOrder(criterioVencimento));
+        
+        /**
+         * Comparator para ordenar trabalhadores por odem alfabética
+         * 
+         */
+        Comparator<Trabalhador> criterioAlfabetico = new Comparator<Trabalhador>() {
+
+            @Override
+            public int compare(Trabalhador trabalhador, Trabalhador outroTrabalhador) {
+                return trabalhador.getNome().compareTo(outroTrabalhador.getNome());
+            }
+        };
+
+        Collections.sort(trabs, criterioAlfabetico);
+        listar(trabs);
+
+        Collections.sort(trabs, Collections.reverseOrder(criterioAlfabetico));
+        
+    }         
+        
         /**
          * Método for para percorrer o array através de um ciclo ForEach...
          *
