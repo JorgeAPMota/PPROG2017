@@ -39,7 +39,7 @@ public class Senior extends Socio {
      */
     public Senior(String nome, int nContribuinte, int anoNascimento, boolean dirigente) {
         super(TAG + ++contSenior, nome, nContribuinte, anoNascimento);
-        this.identificador = TAG + contSenior;
+      //this.identificador = TAG + contSenior;
         this.dirigente = dirigente;
     }
 
@@ -49,7 +49,7 @@ public class Senior extends Socio {
     public Senior() {
         super();
         ++contSenior;
-        this.identificador = TAG + contSenior;
+      //this.identificador = TAG + contSenior;
         this.dirigente = DIRIGENTE_POR_OMISSAO;
     }
 
