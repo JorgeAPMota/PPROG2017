@@ -5,6 +5,9 @@
  */
 package ex_exposicao;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -74,7 +77,17 @@ public class Quadro implements Comparable<Quadro>{
         }
         return true;
     }
+
+//ArrayLista de quadros
+List<Quadro> quadros = new ArrayList<>();
+
+//ForEach listarquadros() para percorrer o array:
+private static void listarQuadros(List<Quadro> quadros){
+    for (Quadro quadro:quadros){
+    }
+}    
     
+//CompareTo para comparar autores
     @Override
     public int compareTo(Quadro outroQuadro){
         String nome1 = this.getAutor();
@@ -84,6 +97,8 @@ public class Quadro implements Comparable<Quadro>{
     }
     
 //Deve implementar a interface Comparable para estabelecer uma ordem nas suas instâncias, segundo o nome do autor.
-    
+public void ordenarAutores(){
+        Collections.sort(quadros);
+}    
     
 }

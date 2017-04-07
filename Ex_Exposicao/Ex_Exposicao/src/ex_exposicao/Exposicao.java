@@ -6,23 +6,27 @@
 package ex_exposicao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 /**
  *
  * @author i131345
  */
-public class Exposicao implements Comparable{
+public class Exposicao implements Comparable<Exposicao>{
     
 //Deve representar uma exposição através da designação, do ano de realização e dos quadros 
 //exibidos.
 //
     private String designacao;
     private int anorealizacao;
+    private int anoRealizacao1;
+    private int anoRealizacao2;
+
     
-    
-    public Exposicao (String designacao, int anorealizacao){
+    //Constructor completo que recebe por parâmetro: a designação da exposição, 
+    //o ano de realização e uma lista de quadros
+    public Exposicao (String designacao, int anorealizacao, List<Quadro> quadros){
         this.designacao = designacao;
         this.anorealizacao = anorealizacao;
     }
@@ -35,11 +39,11 @@ public class Exposicao implements Comparable{
         this.designacao = designacao;
     }
 
-    public int getAnorealizacao() {
+    public int getAnoRealizacao() {
         return anorealizacao;
     }
 
-    public void setAnorealizacao(int anorealizacao) {
+    public void setAnoRealizacao(int anorealizacao) {
         this.anorealizacao = anorealizacao;
     }
 
@@ -49,38 +53,31 @@ public class Exposicao implements Comparable{
 List<Quadro> quadros = new ArrayList<>();
 
 //ForEach listarquadros() para percorrer o array:
-private static void listarQuadros(List<Quadro> quadros){
+private void listarQuadros(List<Quadro> quadros){
+    String quadroTemp = "";
     for (Quadro quadro:quadros){
+    quadroTemp = quadroTemp + toString();
     }
 }
+
+//CompareTo para comparar Exposicao por ano de realizacao
+@Override
+    public int compareTo(Exposicao outraExposicao){
+        int anoRealizacao1 = this.getAnoRealizacao();
+        int anoRealizacao2 = outraExposicao.getAnoRealizacao();
+        
+        if(anoRealizacao1<anoRealizacao2)
+            return -1;
+        else if(anoRealizacao1>anoRealizacao2)
+            return 1;
+        else
+            return 0;           
+        }
+    
+
     
     
-    
-//Método equals reescrito
-   @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Exposicao other = (Exposicao) obj;
-        if (this.anorealizacao != other.anorealizacao) {
-            return false;
-        }
-        if (!Objects.equals(this.designacao, other.designacao)) {
-            return false;
-        }
-        if (!Objects.equals(this.quadros, other.quadros)) {
-            return false;
-        }
-        return true;
-    }
-    
+
 //Método para adicionar a instância de Quadro recebida por parâmetro. Se a operação 
 //for bem sucedida, deve retornar true. Caso contrário deve retornar false.
     public boolean adicionaQuadro(Quadro quadro){
@@ -98,14 +95,9 @@ private static void listarQuadros(List<Quadro> quadros){
         
 //Deve implementar a interface Comparable para estabelecer uma ordem nas suas instâncias, 
 //segundo o ano de realização da exposição.
-collections.sort(quadros);
-
-
-
-
- 
-
-  
+public void ordenarAnoExposicao(){
+        Collections.sort(quadros);
+}
   
     
     
