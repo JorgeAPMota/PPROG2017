@@ -22,11 +22,17 @@ public class TesteEmpregado {
     }
     
 //a) Crie e visualize uma instância de Data para representar a data atual;
+    Data datahoje = Data.dataAtual();
     
 //b) Crie e visualize duas instâncias de Tempo;
-
+    Tempo tempo1 = new Tempo(21,21,21);
+    Tempo tempo2 = new Tempo(42,42,42);
+        
 //c) Crie duas instâncias de Empregado usando para o efeito as instâncias de Data e de Tempo criadas anteriormente;
-
+    Empregado empregado1 = new Empregado("Joaquim", "Silva", datahoje, 08, 17);
+    Empregado empregado2 = new Empregado("Bruno", "Mars", datahoje, 8, 17);
+    
+    
 //d) Teste se os atributos do tipo Data dos empregados criados possuem referências partilhadas;
 
 //e) Teste se os atributos do tipo Tempo dos empregados criados possuem referências partilhadas;
