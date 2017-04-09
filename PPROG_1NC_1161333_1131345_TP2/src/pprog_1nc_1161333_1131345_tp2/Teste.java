@@ -5,6 +5,9 @@
  */
 package pprog_1nc_1161333_1131345_tp2;
 
+import java.util.Collections;
+import java.util.Comparator;
+
 /**
  * PPROG 2016/2017
  * Trabalho Prático nº2 - TP2
@@ -20,7 +23,16 @@ public class Teste {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
     
-}
+
+            }
+          
+//Deve implementar a interface Comparable para estabelecer uma ordem nas suas instâncias, 
+//segundo a classe a que pertencem.
+public void ordenarPorClasse(){
+        Collections.sort(Bomservico entidadesBomServico);
+}    
+        
+    
+    
+

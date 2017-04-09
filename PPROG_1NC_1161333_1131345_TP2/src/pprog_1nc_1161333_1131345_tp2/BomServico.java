@@ -9,29 +9,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PPROG 2016/2017
- * Trabalho Prático nº2 - TP2
- * 
+ * PPROG 2016/2017 Trabalho Prático nº2 - TP2
+ *
  * @author 1161333 - Joana Gusmao Guedes
  * @author 1131345 - Jorge Mota
- * 
+ *
  * @since 17/04/2017
  */
 public class BomServico {
-    
+
     private String nome;
     private String telefone;
     private int NIF;
-    
+
     //ArrayList para entidades de BomServico
-    List<Entidades> entidadesBomServico = new ArrayList<>();   
+    List<Entidades> entidadesBomServico = new ArrayList<>();
 
     /**
      * Constructor completo da instancia BomServico
+     *
      * @param nome
      * @param telefone
      * @param NIF
-     * @param entidadesBomServico - Array que ocntem todas as entidades da empresa BomServiço
+     * @param entidadesBomServico - Array que ocntem todas as entidades da
+     * empresa BomServiço
      */
     public BomServico(String nome, String telefone, int NIF, List<Entidades> entidadesBomServico) {
         this.nome = nome;
@@ -79,14 +80,25 @@ public class BomServico {
 
     /**
      * Método For Each que vai percorrer o array de entidadesBomServico
-     * @param entidadesBomServico - Array com as entidades da empresa Bom Serviço
+     *
+     * @param entidadesBomServico - Array com as entidades da empresa Bom
+     * Serviço
      */
     public static void listarEntidadesBomServico(List entidadesBomServico) {
         for (Object elemento : entidadesBomServico) {
             System.out.println(elemento.toString());
 
+        }
+        //Método para adicionar a instância de Quadro recebida por parâmetro. Se a operação 
+        //for bem sucedida, deve retornar true. Caso contrário deve retornar false.
+    public boolean adicionaEntidade(BomServico entidade) {
+        return entidadesBomServico.add(entidade);
     }
-    
-    
-}
+
+//Método para remover a instância de BomServico recebida por parâmetro. Se a operação 
+//for bem sucedida, deve retornar true. Caso contrário deve retornar false.
+    public boolean removeEntidade(BomServico entidade) {
+        return entidadesBomServico.remove(entidade);
+    }
+
 }
