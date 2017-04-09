@@ -25,5 +25,68 @@ public class BomServico {
     
     //ArrayList para entidades de BomServico
     List<Entidades> entidadesBomServico = new ArrayList<>();   
+
+    /**
+     * Constructor completo da instancia BomServico
+     * @param nome
+     * @param telefone
+     * @param NIF
+     * @param entidadesBomServico - Array que ocntem todas as entidades da empresa BomServiço
+     */
+    public BomServico(String nome, String telefone, int NIF, List<Entidades> entidadesBomServico) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.NIF = NIF;
+        this.entidadesBomServico = entidadesBomServico;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public int getNIF() {
+        return NIF;
+    }
+
+    public List<Entidades> getEntidadesBomServico() {
+        return entidadesBomServico;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setNIF(int NIF) {
+        this.NIF = NIF;
+    }
+
+    public void setEntidadesBomServico(List<Entidades> entidadesBomServico) {
+        this.entidadesBomServico = entidadesBomServico;
+    }
+
+    @Override
+    public String toString() {
+        return "BomServico{" + "nome=" + nome + ", telefone=" + telefone + ", NIF=" + NIF + ", entidadesBomServico=" + listarEntidadesBomServico() + '}';
+    }
+
+    /**
+     * Método For Each que vai percorrer o array de entidadesBomServico
+     * @param entidadesBomServico - Array com as entidades da empresa Bom Serviço
+     */
+    public static void listarEntidadesBomServico(List entidadesBomServico) {
+        for (Object elemento : entidadesBomServico) {
+            System.out.println(elemento.toString());
+
+    }
     
+    
+}
 }

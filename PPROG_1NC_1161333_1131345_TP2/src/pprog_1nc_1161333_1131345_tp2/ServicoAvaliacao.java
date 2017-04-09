@@ -25,5 +25,5 @@ public interface ServicoAvaliacao {
     public abstract float obterAvaliacao();
 
     public abstract void atualizarAvaliacao (int val);
-
+         
 }
