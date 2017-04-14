@@ -22,7 +22,9 @@ public interface ServicoAvaliacao {
     public static final int MUITO_BOM = 4;
     public static final int EXCELENTE = 5;
 
+   
     public abstract float obterAvaliacao();
+  
 
     public abstract void atualizarAvaliacao (int val);
          

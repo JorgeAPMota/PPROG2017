@@ -23,9 +23,9 @@ public interface ServicoHotel extends ServicoAlojamento {
     public static final String CINCO_ESTRELAS = "*****";
     public static final String CATEGORIA_POR_OMISSAO = UMA_ESTRELA;
 
-    //não sei o que se pretende com este método! Quarta-feira pensamos nisto.
+
     public abstract boolean validarServicoGuia();
     
-    //não sei o que se pretende com este método! Quarta-feira pensamos nisto.
+
     public abstract boolean validarServicoSPA();
 }

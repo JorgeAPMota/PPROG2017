@@ -27,26 +27,31 @@ public abstract class Alojamento extends EntidadeComNIF implements ServicoAlojam
         this.servicoTransfer = SERVICO_POR_OMISSAO;
     }
 
-    public boolean isServicoTransfer() {
-        return servicoTransfer;
-    }
-
     public void setServicoTransfer(boolean servicoTransfer) {
         this.servicoTransfer = servicoTransfer;
     }
 
     @Override
     public String toString() {
-        return "Alojamento{" +super.toString()+ "servicoTransfer=" + isServicoTransfer() + '}';
+        return super.toString() + "\n  Tem servico de transfer? " + validarServicoTransfer();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!super.equals(obj)) {
+            return false;
+        }
+        Alojamento outroAlojamento = (Alojamento) obj;
+        return this.servicoTransfer == outroAlojamento.servicoTransfer;
     }
 
     @Override
     public boolean validarServicoTransfer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (servicoTransfer == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
-    
-    
-    
-    
 
 }

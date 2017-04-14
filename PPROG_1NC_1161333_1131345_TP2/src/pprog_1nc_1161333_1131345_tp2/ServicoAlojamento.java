@@ -18,6 +18,7 @@ public interface ServicoAlojamento {
 
     public static final boolean SERVICO_POR_OMISSAO = false;
 
+
     public abstract boolean validarServicoTransfer();
 
 }

@@ -6,6 +6,7 @@
 package pprog_1nc_1161333_1131345_tp2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,11 +26,6 @@ public class BomServico {
 
     //ArrayList para entidades de BomServico
     List<Entidade> entidadesBomServico = new ArrayList<>();
-    //ArrayLists para cada tipo de entidade BomServiço
-    List<PontoInteresse> pontosInteresse = new ArrayList<>();
-    List<Restaurante> restaurantes = new ArrayList<>();
-    List<Hotel> hoteis = new ArrayList<>();
-    List<Hostel> hostels = new ArrayList<>();
 
     /**
      * Construtor completo da instancia BomServico
@@ -59,10 +55,6 @@ public class BomServico {
         return NIF;
     }
 
-    public List<Entidade> getEntidadesBomServico() {
-        return entidadesBomServico;
-    }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -75,106 +67,137 @@ public class BomServico {
         this.NIF = NIF;
     }
 
+    public void setEntidadesBomServico(List<Entidade> entidadesBomServico) {
+        this.entidadesBomServico = entidadesBomServico;
+    }
+
     /**
-     * Método For Each que vai percorrer o array de entidadesBomServico
+     * Método toString
      *
-     * @param entidadesBomServico - Array com as entidades da empresa Bom
-     * Serviço
+     * @return - string com nome, telefone e nif
      */
-    public static void listarEntidadesBomServico(List entidadesBomServico) {
-        for (Object elemento : entidadesBomServico) {
+    @Override
+    public String toString() {
+        return "- Empresa Bom Servico" + "\n  nome: " + nome + "\n  telefone: " + telefone + "\n  NIF: " + NIF + "\n  Lista de entidades de Bom Servico:\n " + entidadesBomServico.toString();
+    }
+
+    /**
+     * percorre o array de entidadesBomServico e imprime
+     *
+     */
+    public void listar() {
+        for (Entidade elemento : entidadesBomServico) {
             System.out.println(elemento.toString());
         }
     }
 
-    //ver se é possível fazer de outra forma.
-    public float obterAvaliacao(Entidade entidade) {
-        return entidade.obterAvaliacao();
+    /**
+     * lista todas as entidades do array list pertecnebtes à classe passada como
+     * parâmetro
+     *
+     * @param tipo - string com o nome da classe
+     */
+    public void listar(String tipo) {
+        String nomeDaClasse;
+        for (Entidade elemento : entidadesBomServico) {
+            nomeDaClasse = elemento.getClass().getSimpleName();
+            if (nomeDaClasse.equalsIgnoreCase(tipo)) {
+                System.out.println(elemento.toString());
+            }
+        }
+    }
+
+    /**
+     * cria novo arraylist para conter apenas elementos da classe que é passada
+     * por parâmetro
+     *
+     * @param tipo - string com o nome da classe
+     * @return - novo arrayList com elementos da classe em questão
+     */
+    public List<Entidade> retornarPorTipo(String tipo) {
+        List<Entidade> lista = new ArrayList<>();
+        String nomeDaClasse;
+        for (Entidade elemento : entidadesBomServico) {
+            nomeDaClasse = elemento.getClass().getSimpleName();
+            if (nomeDaClasse.equalsIgnoreCase(tipo)) {
+                lista.add(elemento);
+            }
+        }
+        return lista;
     }
 
     //Método para adicionar a instância de Entidade recebida por parâmetro. Se a operação 
     //for bem sucedida, deve retornar true. Caso contrário deve retornar false.
     public boolean adicionaEntidade(Entidade entidade) {
-        return entidadesBomServico.add(entidade);
+        boolean adiciona = entidadesBomServico.add(entidade);
+        Collections.sort(entidadesBomServico);
+        return adiciona;
     }
 
     //Método para remover a instância de Entidade recebida por parâmetro. Se a operação 
     //for bem sucedida, deve retornar true. Caso contrário deve retornar false.
+    //será para usar equals??
     public boolean removeEntidade(Entidade entidade) {
         return entidadesBomServico.remove(entidade);
     }
 
-    public void subdividirArrayEntidades(List entidadesBomServico) {
-        for (Object elemento : entidadesBomServico) {
-            if (elemento instanceof PontoInteresse) {
-                pontosInteresse.add((PontoInteresse) elemento);
+    public void atualizarAvaliacaoEntidade(Entidade entidade, int val) {
+
+        entidade.atualizarAvaliacao(val);
+    }
+
+    public static Scanner in = new Scanner(System.in);
+
+    public void obterAvaliacaoEntidade(Entidade entidade) {
+
+        System.out.println(entidade.getNome() + ", avaliação média: " + entidade.obterAvaliacao());
+    }
+
+    public void listaOrdenadaRest(int tipocozinha) {
+
+        int cont = 0;
+        for (Entidade elemento : retornarPorTipo("restaurante")) {
+            Restaurante rest = (Restaurante) elemento;
+            if (rest != null && rest.getTipoComida() == tipocozinha) {
+                System.out.println("Restaurante= " + rest.getNome() + "; preço médio= " + rest.obterPrecoMedioPorPessoa());
+                ++cont;
             }
-            if (elemento instanceof Restaurante) {
-                restaurantes.add((Restaurante) elemento);
-            }
-            if (elemento instanceof Hotel) {
-                hoteis.add((Hotel) elemento);
-            }
-            if (elemento instanceof Hostel) {
-                hostels.add((Hostel) elemento);
-            }
+        }
+        if (cont == 0) {
+            System.out.println("nenhum restaurante encontrado");
+
         }
     }
 
-    Scanner in = new Scanner(System.in);
-    
-        public void listaOrdenadaRest(List<Restaurante> restaurantes) {
-        int tipoCozinha;
-        System.out.println("Insira o nº correspondente ao tipo de cozinha que procura\n"+
-        "     Cozinha Tradicional Portuguesa = 1; \n"+
-        "     Cozinha Italiana = 2; \n"+
-        "     Cozinha Chinesa = 3; \n"+
-        "     Outra = 4; ");
-        System.out.println();
-        tipoCozinha = in.nextInt();
+    public void listaOrdenadaHoteis(String categoria) {
 
-        for (Restaurante elemento : restaurantes) {
-            if (elemento.getTipoComida() == tipoCozinha) {
-                System.out.println(elemento.toString());
+        int cont = 0;
+        for (Entidade elemento : retornarPorTipo("hotel")) {
+            Hotel hotel = (Hotel) elemento;
+            if (hotel != null && hotel.getCategoria().equals(categoria) && hotel.validarServicoTransfer()) {
+                System.out.println( hotel.getNome() + "; tem serviço Guia? " + hotel.validarServicoTransfer());
+                ++cont;
             }
+        }
+        if (cont == 0) {
+            System.out.println("nenhum hotel encontrado");
+
         }
     }
 
-        
-        public void listaOrdenadaHoteis(List<Hotel> hoteis) {
-        String categoria;
-        System.out.println("Insira o nº de * correspondente à categoria do hotel que pricura\n"+
-        "     Uma Estrela = *; \n"+
-        "     Duas Estrelas = **; \n"+
-        "     Três Estrelas = ***; \n"+
-        "     Quatro Estrelas = ****; ");
-        System.out.println();
-        categoria = in.nextLine();
+    public void listaOrdenadaPI(int grau) {
 
-        for (Hotel elemento : hoteis) {
-            if (elemento.getCategoria().equalsIgnoreCase(categoria) && elemento.validarServicoTransfer()) {
-                System.out.println(elemento.toString());
+        int cont = 0;
+        for (Entidade elemento : retornarPorTipo("pontointeresse")) {
+            PontoInteresse pontointeresse = (PontoInteresse) elemento;
+            if (pontointeresse != null && pontointeresse.obterAvaliacao() >= grau) {
+                System.out.println(pontointeresse.toString());
+                ++cont;
             }
         }
-    }
-         
-         
-    public void listaOrdenadaPI(List<PontoInteresse> pontosInteresse) {
-        int grau;
-        System.out.println("Insira o nº correspondente ao grau de satisfação mínimo do ponto de interesse que procura\n"+ 
-"        Fraco = 1;\n" +
-"        Razoáveln" +
-"        Bom = 3;\n" +
-"        Muito Bom = 4;\n" +
-"        Excelente = 5; "); 
-        
-        System.out.println();
-        grau = in.nextInt();
+        if (cont == 0) {
+            System.out.println("nenhum ponto de interesse encontrado");
 
-        for (PontoInteresse elemento : pontosInteresse) {
-            if (elemento.obterAvaliacao() >= grau) {
-                System.out.println(elemento.toString());
-            }
         }
     }
 

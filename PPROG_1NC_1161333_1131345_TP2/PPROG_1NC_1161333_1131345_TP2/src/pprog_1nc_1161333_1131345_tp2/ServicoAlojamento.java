@@ -18,7 +18,7 @@ public interface ServicoAlojamento {
 
     public static final boolean SERVICO_POR_OMISSAO = false;
 
-    //não sei o que se pretende com este método! Quarta-feira pensamos nisto.
+
     public abstract boolean validarServicoTransfer();
 
 }

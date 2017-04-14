@@ -22,10 +22,10 @@ public interface ServicoAvaliacao {
     public static final int MUITO_BOM = 4;
     public static final int EXCELENTE = 5;
 
-    //não sei o que se pretende com este método é aquilo que nós fizémos. método get? Quarta-feira pensamos nisto.
+   
     public abstract float obterAvaliacao();
   
-    //não sei o que se pretende com este método é aquilo que nós fizémos. Método set? Quarta-feira pensamos nisto.
+
     public abstract void atualizarAvaliacao (int val);
          
 }

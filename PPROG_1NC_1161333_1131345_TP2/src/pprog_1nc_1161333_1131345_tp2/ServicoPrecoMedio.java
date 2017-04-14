@@ -15,7 +15,7 @@ package pprog_1nc_1161333_1131345_tp2;
  * @since 17/04/2017
  */
 public interface ServicoPrecoMedio {
- 
+
     public abstract float obterPrecoMedioPorPessoa();
     
 }

@@ -23,8 +23,9 @@ public interface ServicoHotel extends ServicoAlojamento {
     public static final String CINCO_ESTRELAS = "*****";
     public static final String CATEGORIA_POR_OMISSAO = UMA_ESTRELA;
 
-    
+
     public abstract boolean validarServicoGuia();
+    
 
     public abstract boolean validarServicoSPA();
 }

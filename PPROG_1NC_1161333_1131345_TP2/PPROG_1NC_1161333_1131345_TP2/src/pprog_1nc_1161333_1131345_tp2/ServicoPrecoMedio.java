@@ -15,7 +15,7 @@ package pprog_1nc_1161333_1131345_tp2;
  * @since 17/04/2017
  */
 public interface ServicoPrecoMedio {
-    //não sei o que se pretende com este método! Quarta-feira pensamos nisto. método get?
+
     public abstract float obterPrecoMedioPorPessoa();
     
 }
