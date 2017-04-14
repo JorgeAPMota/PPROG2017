@@ -107,7 +107,7 @@ public class Teste {
         
         
         String categoria;
-        System.out.println("\nInsira o nº de * correspondente à categoria do hotel que pricura\n"
+        System.out.println("\nInsira o nº de * correspondente à categoria do hotel que procura\n"
                 + "     Uma Estrela = *; \n"
                 + "     Duas Estrelas = **; \n"
                 + "     Três Estrelas = ***; \n"
@@ -116,18 +116,19 @@ public class Teste {
         System.out.print("\n### Listagem de hotéis de categoria igual ou superior a ");
         switch (categoria) {
             case "*":
-                System.out.println("Uma Estrela ###\n");
+                System.out.print("Uma Estrela");
                 break;
             case "**":
-                System.out.println("Duas Estrelas ###\n");
+                System.out.print("Duas Estrelas");
                 break;
             case "***":
-                System.out.println("Três Estrelas ###\n");
+                System.out.print("Três Estrelas");
                 break;
             case "****":
-                System.out.println("Quatro Estrelas ###\n");
+                System.out.print("Quatro Estrelas");
                 break;
         }
+        System.out.println(" com serviço de transfer ### ");
         bomservico.listaOrdenadaHoteis(categoria);
         
         
@@ -140,7 +141,7 @@ public class Teste {
                 + "        Excelente = 5;\n ");
         grau = in.nextInt();
         in.nextLine();
-        System.out.println("\n### Listagem de pontos de interesse com grau de satisfação igual ou superior a ");
+        System.out.print("\n### Listagem de pontos de interesse com grau de satisfação igual ou superior a ");
         switch (grau) {
             case 1:
                 System.out.println("Fraco ###\n");

@@ -26,7 +26,7 @@ public abstract class Entidade implements ServicoAvaliacao, Comparable<Entidade>
     private static final String ENDERECO_POR_DEFEITO = "sem endereco";
 
     /**
-     * Construtor completo para Entidades
+     * Constrói uma instânica recebendo nome e endereço
      *
      * @param nome - Nome da instancia de Entidades
      * @param endereco - Endereço da instancia de Entidades
@@ -44,43 +44,77 @@ public abstract class Entidade implements ServicoAvaliacao, Comparable<Entidade>
         this.endereco = ENDERECO_POR_DEFEITO;
     }
 
+    /**
+     * devolve o nome da entidade
+     *
+     * @return o nome da entidade
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * devolve o endereço da entidade
+     *
+     * @return o endereço da entidade
+     */
     public String getEndereco() {
         return endereco;
     }
 
+    /**
+     * devolva a avaliação total da entidade
+     *
+     * @return a avaliação total da entidade
+     */
     public int getAvaliacao() {
         return avaliacao;
     }
 
+    /**
+     * devolve o contador com nº de avaliações feitas à entidade
+     *
+     * @return contador com o nº de avaliações feitas à entidade
+     */
     public int getContAvaliacoes() {
         return contAvaliacoes;
     }
 
+    /**
+     * Define o nome da entidade
+     *
+     * @param nome o nome da entidade
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    /**
+     * define o endereço da entidade
+     *
+     * @param endereco o endereço da entidade
+     */
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
-    public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
-    }
-
-    public void setContAvaliacoes(int contAvaliacoes) {
-        this.contAvaliacoes = contAvaliacoes;
-    }
-
+    /**
+     * devolve uma string com o nome, endereço e avaliação média da entidade
+     *
+     * @return string com o nome, endereço e avaliação média da entidade
+     */
     @Override
     public String toString() {
         return "\n  nome: " + getNome() + "\n  endereço: " + getEndereco() + "\n  avaliacao média: " + obterAvaliacao();
     }
 
+    /**
+     * compara a entidade com o objecto recebido
+     *
+     * @param obj o objecto que se compara com a entidade
+     * @return true se o objecto recebido representar uma entidade equivalente à
+     * entidade. Caso contrário retorna false
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -93,6 +127,18 @@ public abstract class Entidade implements ServicoAvaliacao, Comparable<Entidade>
         return this.nome.equalsIgnoreCase(outraEntidade.nome) && this.endereco.equalsIgnoreCase(outraEntidade.endereco);
     }
 
+    /**
+     * compara uma entidade com outra entidade recebida por parâmetro
+     *
+     * @param outraEntidade a ser comparada
+     * @return o valor 0 ,se as entidades pertencerem à mesma classe, -1 ou 1 se
+     * pertencerem a classes diferentes. Caso pertençam à mesma classe então
+     * ordena alfabeticamente, retornando o valor -1 se, alfabeticamente, o nome
+     * da entidade for anterior ao nome da outraEntidade; o valor 1 se,
+     * alfabeticamente, o nome da entidade for posterior ao nome da
+     * outraEntidade, ou 0 se os nomes forem iguais.
+     *
+     */
     @Override
     public int compareTo(Entidade outraEntidade) {
         String entidadeA = this.getClass().getSimpleName();
@@ -106,7 +152,7 @@ public abstract class Entidade implements ServicoAvaliacao, Comparable<Entidade>
     }
 
     /**
-     * Metodo que obtem a media de avaliações de uma instância
+     * Metodo que obtem a media de todas as avaliações feitas a uma instância
      *
      * @return media - média das avaliações da instâmcia
      */
@@ -121,11 +167,11 @@ public abstract class Entidade implements ServicoAvaliacao, Comparable<Entidade>
     }
 
     /**
-     * Metodo que recebe um inteiro e actualiza a avaliação da instancia
-     * contAvaliacoes conta o total de avaliacoes obtida para cada instancia
+     * Metodo que recebe um inteiro e actualiza a avaliação da instancia.
+     * contAvaliacoes conta nº total de avaliacoes feitas à instancia
      *
-     * @param val - inteiro atribuido por utilizador que reflecte a avaliacao feita à
-     * entidade
+     * @param val - inteiro atribuido por utilizador que reflecte a avaliacao
+     * feita à entidade
      */
     @Override
     public void atualizarAvaliacao(int val) {

@@ -17,25 +17,48 @@ public abstract class Alojamento extends EntidadeComNIF implements ServicoAlojam
 
     private boolean servicoTransfer;
 
+    /**
+     * Constructor completo do Alojamento
+     * @param nome - Nome do objecto (hotel ou hostel) de alojamento
+     * @param endereco - Endereço do objecto de alojamento
+     * @param nif - Nº de contribuinte do objecto de alojamento
+     * @param servicoTransfer - Boolean, retornando true se tiver serviço de transfer, ou false se não tiver 
+     */
     public Alojamento(String nome, String endereco, int nif, boolean servicoTransfer) {
         super(nome, endereco, nif);
         this.servicoTransfer = servicoTransfer;
     }
 
+    /**
+     * Constructor vazio de Alojamento
+     */
     public Alojamento() {
         super();
         this.servicoTransfer = SERVICO_POR_OMISSAO;
     }
 
+    /**
+     * Método set/modificação para serviçoTransfer
+     * @param servicoTransfer 
+     */
     public void setServicoTransfer(boolean servicoTransfer) {
         this.servicoTransfer = servicoTransfer;
     }
 
+    /**
+     * Método toString para imprimir o conteúdo do objecto criado em Alojamento
+     * @return 
+     */
     @Override
     public String toString() {
         return super.toString() + "\n  Tem servico de transfer? " + validarServicoTransfer();
     }
 
+    /**
+     * Método equals para comparar obj com outro alojamento já criado e com serviço de transfer  
+     * @param obj - objeto recebido por parâmetro
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)) {
@@ -45,6 +68,10 @@ public abstract class Alojamento extends EntidadeComNIF implements ServicoAlojam
         return this.servicoTransfer == outroAlojamento.servicoTransfer;
     }
 
+    /**
+     * Método para Validar Serviço de Transfer
+     * @return true se tiver serviço de transfer ou false se não tiver
+     */
     @Override
     public boolean validarServicoTransfer() {
         if (servicoTransfer == true) {
