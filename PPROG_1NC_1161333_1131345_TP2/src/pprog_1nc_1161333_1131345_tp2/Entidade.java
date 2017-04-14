@@ -26,7 +26,7 @@ public abstract class Entidade implements ServicoAvaliacao, Comparable<Entidade>
     private static final String ENDERECO_POR_DEFEITO = "sem endereco";
 
     /**
-     * Constrói uma instânica recebendo nome e endereço
+     * Constrói uma instância recebendo nome e endereço
      *
      * @param nome - Nome da instancia de Entidades
      * @param endereco - Endereço da instancia de Entidades
