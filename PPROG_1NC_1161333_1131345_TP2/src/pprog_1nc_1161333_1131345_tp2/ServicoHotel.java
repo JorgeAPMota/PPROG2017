@@ -6,12 +6,11 @@
 package pprog_1nc_1161333_1131345_tp2;
 
 /**
- * PPROG 2016/2017
- * Trabalho Prático nº2 - TP2
- * 
+ * PPROG 2016/2017 Trabalho Prático nº2 - TP2
+ *
  * @author 1161333 - Joana Gusmao Guedes
  * @author 1131345 - Jorge Mota
- * 
+ *
  * @since 17/04/2017
  */
 public interface ServicoHotel extends ServicoAlojamento {
@@ -23,9 +22,19 @@ public interface ServicoHotel extends ServicoAlojamento {
     public static final String CINCO_ESTRELAS = "*****";
     public static final String CATEGORIA_POR_OMISSAO = UMA_ESTRELA;
 
-
+    /**
+     * Valida serviço de Guia retornando true ou false caso tenha ou não tenha,
+     * respectivamente este serviço
+     *
+     * @return
+     */
     public abstract boolean validarServicoGuia();
-    
 
+    /**
+     * Valida serviço de SPA retornando true ou false caso tenha ou não tenha,
+     * respectivamente este serviço
+     *
+     * @return
+     */
     public abstract boolean validarServicoSPA();
 }

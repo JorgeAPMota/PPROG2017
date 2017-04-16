@@ -23,29 +23,44 @@ import java.util.Scanner;
 public class Teste {
 
     private static final Scanner in = new Scanner(System.in);
-    
+
     public static void main(String[] args) {
 
-        
         List<Entidade> entidadesBomServico = new ArrayList<>();
-        BomServico bomservico = new BomServico("BomServiço", "226578345", 178296416, entidadesBomServico){};
+        BomServico bomservico = new BomServico("BomServiço", "226578345", 178296416, entidadesBomServico) {
+        };
 
+        /**
+         * Instâncias criadas de hotel
+         */
         Hotel h1 = new Hotel("Hotel Marlindo", "Rua da Marginal, nº72", 134278476, true, Hotel.CINCO_ESTRELAS, true, true);
         Hotel h2 = new Hotel("Hotel Sol e Mar", "Passeio Alegre, nº14", 763908724, false, Hotel.TRES_ESTRELAS, false, true);
         Hotel h3 = new Hotel("Hotel Montanha branca", "Rua Pico da Serra, nº15", 946123926, true, Hotel.DUAS_ESTRELAS, false, false);
 
+        /**
+         * Instâncias criadas de Hostel
+         */
         Hostel ho1 = new Hostel("Hostel inn", "Rua da Picaria, nº26", 638924539, true, "aberto 24h");
         Hostel ho2 = new Hostel("Poets Hostel", "Rua Sto Ildefonso, nº89", 629830814, false, "aberto das 10h às 22h");
 
+        /**
+         * Instâncias criadas de Restaurante
+         */
         Restaurante r1 = new Restaurante("Paparoca", "Avenida Brasil, nº66", 156488299, 35.5f, Restaurante.COZINHA_TRADICIONAL_PORTUGUESA);
         Restaurante r2 = new Restaurante("xixuan", "Rua da Constituição, nº25", 256389640, 12.7f, Restaurante.COZINHA_CHINESA);
         Restaurante r3 = new Restaurante("Ciao Bella!", "Rua Costa Cabral, nº356", 628040345, 17.3f, Restaurante.COZINHA_ITALIANA);
 
+        /**
+         * Instâncias criadas de Ponto de Interesse
+         */
         PontoInteresse p1 = new PontoInteresse("Miradouro da Fé", "Rua Sta Catarina", PontoInteresse.OUTRO);
         PontoInteresse p2 = new PontoInteresse("Mosteiro de Leça do Balio", "Rua do Mosteiro, nº7", PontoInteresse.MONUMENTO_CLASSICO);
         PontoInteresse p3 = new PontoInteresse("Museu de Serralves", "Av Marechal Gomes da Costa, nº519", PontoInteresse.MONUMENTO_CONTEMPORANEO);
         PontoInteresse p4 = new PontoInteresse("Sé do Porto", "Rua da Sé, nº216", PontoInteresse.MONUMENTO_CLASSICO);
-        
+
+        /**
+         * Adiciona as instâncias ao ArrayList entidadesBomServico de BomServiço
+         */
         bomservico.adicionaEntidade(p4);
         bomservico.adicionaEntidade(h1);
         bomservico.adicionaEntidade(h2);
@@ -60,8 +75,6 @@ public class Teste {
         bomservico.adicionaEntidade(p3);
         bomservico.adicionaEntidade(p4);
 
-       
-        
 //        Hostel ho3 = new Hostel("Hostel out", "Rua do Zambeze, nº33", 627893539, false, "aberto 24h");
 //        bomservico.adicionaEntidade(ho3);
 //        System.out.println("\nho3 adicionado");
@@ -74,12 +87,14 @@ public class Teste {
 //        Hostel ho4 = new Hostel("Hostel out", "Rua do Zambeze, nº33", 627893539, false, "aberto 24h");
 //        bomservico.removeEntidade(ho4);
 //        bomservico.listar();
-
 //        bomservico.listaOrdenadaRest(1);
 //        bomservico.atualizarAvaliacaoEntidade(ho2, 5);
 //        bomservico.obterAvaliacaoEntidade(ho3);
-
-
+       
+        /**
+         * Menu de seleccão apresentado em consola ao utilizador de forma a que
+         * seleccione o tipo de cozinha que pretende
+         */
         System.out.println();
         System.out.println("\nInsira o nº correspondente ao tipo de cozinha que procura\n"
                 + "     Cozinha Tradicional Portuguesa = 1; \n"
@@ -104,8 +119,11 @@ public class Teste {
                 break;
         }
         bomservico.listaOrdenadaRest(tipocozinha);
-        
-        
+
+        /**
+         * Menu de seleccão apresentado em consola ao utilizador de forma a que
+         * seleccione a categoria (nº de estrelas) de hotel que pretende listar
+         */
         String categoria;
         System.out.println("\nInsira o nº de * correspondente à categoria do hotel que procura\n"
                 + "     Uma Estrela = *; \n"
@@ -130,8 +148,12 @@ public class Teste {
         }
         System.out.println(" com serviço de transfer ### ");
         bomservico.listaOrdenadaHoteis(categoria);
-        
-        
+
+        /**
+         * Menu de seleccão apresentado em consola ao utilizador de forma a que
+         * seleccione o valor mínimo médio de grau de satisfação quanto a pontos
+         * de interesse a apresentar
+         */
         int grau;
         System.out.print("\nInsira o nº correspondente ao grau de satisfação mínimo do ponto de interesse que procura\n"
                 + "        Fraco = 1;\n"
@@ -160,11 +182,14 @@ public class Teste {
                 break;
         }
         bomservico.listaOrdenadaPI(grau);
-        
-        
+
+        /**
+         * Lista entidadaes da empresa Bom Serviço agrupadas por Classe e
+         * ordenadas alafbeticamente
+         */
         System.out.print("\n### Listagem das entidades de Bom Serviço agrupadas por Classe e ordenadar alfabeticamente  ###\n");
-        Collections.sort(entidadesBomServico);    
+        Collections.sort(entidadesBomServico);
         bomservico.listar();
-}
+    }
 
 }

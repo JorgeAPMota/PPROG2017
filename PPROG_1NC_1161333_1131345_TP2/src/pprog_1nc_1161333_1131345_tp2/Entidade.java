@@ -26,10 +26,10 @@ public abstract class Entidade implements ServicoAvaliacao, Comparable<Entidade>
     private static final String ENDERECO_POR_DEFEITO = "sem endereco";
 
     /**
-     * Constrói uma instância recebendo nome e endereço
+     * inicializa o nome e o endereço da entidade, recebidos por parâmetro
      *
-     * @param nome - Nome da instancia de Entidades
-     * @param endereco - Endereço da instancia de Entidades
+     * @param nome - Nome da instancia de Entidade
+     * @param endereco - Endereço da instancia de Entidade
      */
     public Entidade(String nome, String endereco) {
         this.nome = nome;
@@ -37,7 +37,7 @@ public abstract class Entidade implements ServicoAvaliacao, Comparable<Entidade>
     }
 
     /**
-     * Construtor vazio
+     * inicializa o nome e o endereço da entidade com os valores por omissao
      */
     public Entidade() {
         this.nome = NOME_POR_DEFEITO;

@@ -20,9 +20,12 @@ public abstract class EntidadeComNIF extends Entidade {
     private static final int NIF_POR_DEFEITO = 0;
 
     /**
-     * Constructor completo para instâncias de EntidadeComNif
-     * @param nome - Atributo nome de objectos de EntidadeComNif que é enviado para a super classe Entidade
-     * @param endereco - Atributo endereço de objectos de EntidadeComNif que é enviado para a super classe Entidade
+     * inicializa o nome, endereço e nif da EntidadeComNif, recebidos por parâmetro
+     *
+     * @param nome - Atributo nome de objectos de EntidadeComNif que é enviado
+     * para a super classe Entidade
+     * @param endereco - Atributo endereço de objectos de EntidadeComNif que é
+     * enviado para a super classe Entidade
      * @param nif - Atributo nif de objectos de EntidadeComNif
      */
     public EntidadeComNIF(String nome, String endereco, int nif) {
@@ -30,24 +33,26 @@ public abstract class EntidadeComNIF extends Entidade {
         this.nif = nif;
     }
 
-     /**
-     * Constructor vazio para instancias de EntidadeComNif
+    /**
+     * inicializa o nome, endereço e nif da EntidadeComNif, com os valores por omissão
      */
     public EntidadeComNIF() {
         super();
         this.nif = NIF_POR_DEFEITO;
     }
 
-     /**
+    /**
      * Método de acesso para obter NIF de uma instância
+     *
      * @return NIF/nº de contribuinte de uma instância
      */
     public int getNif() {
         return nif;
     }
 
-     /**
+    /**
      * Método de modificação do NIF de um objecto
+     *
      * @param nif - NIF/nº de contribuinte de uma instância
      */
     public void setNif(int nif) {
@@ -55,8 +60,10 @@ public abstract class EntidadeComNIF extends Entidade {
     }
 
     /**
-     * Método toString para imprimir o conteúdo do objecto criado em EntidadeComNif
-     * @return - string com o conteudo do toString da super classe, e nif 
+     * Método toString para imprimir o conteúdo do objecto criado em
+     * EntidadeComNif
+     *
+     * @return - string com o conteudo do toString da super classe, e nif
      */
     @Override
     public String toString() {
@@ -64,11 +71,12 @@ public abstract class EntidadeComNIF extends Entidade {
     }
 
     /**
-     * Método que compara a EntidadecomNif com o objecto (obj) recebido por parâmetro
+     * Método que compara a EntidadecomNif com o objecto (obj) recebido por
+     * parâmetro
      *
      * @param obj o objecto que se compara com a EntidadecomNif
-     * @return true se o objecto recebido representar uma entidade equivalente à EntidadecomNif. 
-     * Caso contrário retorna false.
+     * @return true se o objecto recebido representar uma entidade equivalente à
+     * EntidadecomNif. Caso contrário retorna false.
      */
     @Override
     public boolean equals(Object obj) {

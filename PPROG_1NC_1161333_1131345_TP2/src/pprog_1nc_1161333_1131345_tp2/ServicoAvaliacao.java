@@ -6,12 +6,11 @@
 package pprog_1nc_1161333_1131345_tp2;
 
 /**
- * PPROG 2016/2017
- * Trabalho Prático nº2 - TP2
- * 
+ * PPROG 2016/2017 Trabalho Prático nº2 - TP2
+ *
  * @author 1161333 - Joana Gusmao Guedes
  * @author 1131345 - Jorge Mota
- * 
+ *
  * @since 17/04/2017
  */
 public interface ServicoAvaliacao {
@@ -22,10 +21,20 @@ public interface ServicoAvaliacao {
     public static final int MUITO_BOM = 4;
     public static final int EXCELENTE = 5;
 
-   
+    /**
+     * Método que obtém a avaliação de uma determinada instância onde é
+     * implementado este interface
+     *
+     * @return
+     */
     public abstract float obterAvaliacao();
-  
 
-    public abstract void atualizarAvaliacao (int val);
-         
+    /**
+     * Método que actualiza a avaliação de uma determinada instância onde é
+     * implementado este interface
+     *
+     * @return
+     */
+    public abstract void atualizarAvaliacao(int val);
+
 }

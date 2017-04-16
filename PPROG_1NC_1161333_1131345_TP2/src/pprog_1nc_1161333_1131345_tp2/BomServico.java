@@ -45,14 +45,16 @@ public class BomServico {
 
     /**
      * Método get/acesso para o atributo nome de um objecto de BomServiço
+     *
      * @return nome, atributo nome de BomServiço
      */
     public String getNome() {
         return nome;
     }
 
-     /**
+    /**
      * Método get/acesso para o atributo telefone de um objecto de BomServiço
+     *
      * @return telefone, atributo telefone de BomServiço
      */
     public String getTelefone() {
@@ -60,39 +62,48 @@ public class BomServico {
     }
 
     /**
-     * Método get/acesso para o atributo NIF (nº de contribuinte) de um objecto de BomServiço
+     * Método get/acesso para o atributo NIF (nº de contribuinte) de um objecto
+     * de BomServiço
+     *
      * @return NIF, atributo NIF (nº de contribuinte) de BomServiço
      */
     public int getNIF() {
         return NIF;
     }
 
-     /**
+    /**
      * Método set/modificação para o atributo nome de um objecto de BomServiço
+     *
      * @param nome - atributo nome de BomServiço
      */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-     /**
-     * Método set/modificação para o atributo telefone de um objecto de BomServiço
+    /**
+     * Método set/modificação para o atributo telefone de um objecto de
+     * BomServiço
+     *
      * @param telefone - atributo telefone de BomServiço
      */
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
-     /**
-     * Método set/modificação para o atributo telefone de um objecto de BomServiço
+    /**
+     * Método set/modificação para o atributo telefone de um objecto de
+     * BomServiço
+     *
      * @param telefone - atributo telefone de BomServiço
      */
     public void setNIF(int NIF) {
         this.NIF = NIF;
     }
 
-     /**
-     * Método set/modificação para o ArrayList entidadesBomServico de um objecto de BomServiço
+    /**
+     * Método set/modificação para o ArrayList entidadesBomServico de um objecto
+     * de BomServiço
+     *
      * @param entidadesBomServico - arraylist de BomServiço
      */
     public void setEntidadesBomServico(List<Entidade> entidadesBomServico) {
@@ -101,6 +112,7 @@ public class BomServico {
 
     /**
      * Método toString para imprimir o conteúdo do objecto criado em BomServiço
+     *
      * @return - string com nome, telefone e nif
      */
     @Override
@@ -109,7 +121,8 @@ public class BomServico {
     }
 
     /**
-     * Método que percorre o ArrayList entidadesBomServico e imprime
+     * Lista todas as entidades do array list.
+     *
      */
     public void listar() {
         for (Entidade elemento : entidadesBomServico) {
@@ -118,7 +131,9 @@ public class BomServico {
     }
 
     /**
-     * Lista todas as entidades do array list pertencentes à classe passada como parâmetro
+     * Lista todas as entidades do array list pertencentes à classe passada como
+     * parâmetro
+     *
      * @param tipo - string com o nome da classe a ser passado por parâmetro
      */
     public void listar(String tipo) {
@@ -132,8 +147,9 @@ public class BomServico {
     }
 
     /**
-     * Método que cria novo arraylist para conter apenas elementos da classe que é passada
+     * Cria novo arraylist para conter apenas elementos da classe que é passada
      * por parâmetro
+     *
      * @param tipo - string com o nome da classe
      * @return - novo arrayList com elementos da classe em questão
      */
@@ -149,13 +165,13 @@ public class BomServico {
         return lista;
     }
 
-
     /**
-     * Método para adicionar a instância de Entidade recebida por parâmetro. Se a operação 
+     * Adiciona a instância de Entidade recebida por parâmetro. Se a operação
      * for bem sucedida, deve retornar true, caso contrário deve retornar false.
-     * Após isto ordena o arraylist através do collections.sort;
+     * Após isto ordena o arraylist através do collections.sort
+     *
      * @param entidade - objecto do tipo Entidade passado por parâmetro
-     * @return 
+     * @return - true se adiciona
      */
     public boolean adicionaEntidade(Entidade entidade) {
         boolean adiciona = entidadesBomServico.add(entidade);
@@ -163,32 +179,40 @@ public class BomServico {
         return adiciona;
     }
 
-
     /**
-     * Método para remover a instância de Entidade recebida por parâmetro. Se a operação 
-     * for bem sucedida, deve retornar true. Caso contrário deve retornar false.
+     * Remove a instância de Entidade igual à recebida por parâmetro, de acordo
+     * com o definido no Equals() da classe. Se a operação for bem sucedida,
+     * deve retornar true. Caso contrário deve retornar false.
+     *
      * @param entidade
-     * @return - ArrayList entidadesBomserviço com a instância em questão já removida
+     * @return - true se encontra a instância
+     *
      */
     public boolean removeEntidade(Entidade entidade) {
         return entidadesBomServico.remove(entidade);
     }
 
     /**
-     * Método que actualiza a avaliação para uma determinade entidade de BomServiço recebendo por parâmetro 
-     * a entidade a actualizar a avaliação e o val introduzido pelo utilizador
-     * @param entidade - objecto entidade cuja avaliação será actualizada 
-     * @param val - valor de avaliação introduzido 
+     * Actualiza a avaliação para uma determinade entidade de BomServiço
+     * recebendo por parâmetro a entidade cuja avaliação se pretende actualizar,
+     * e o valor de avaliação introduzido pelo utilizador
+     *
+     * @param entidade - objecto Entidade cuja avaliação será actualizada
+     * @param val - valor de avaliação introduzido
      */
     public void atualizarAvaliacaoEntidade(Entidade entidade, int val) {
         entidade.atualizarAvaliacao(val);
     }
-
+    /**
+     * cria uma nova instância de Scanner que produz valores recebidos por input
+     * do teclado
+     */
     public static Scanner in = new Scanner(System.in);
 
     /**
-     * Método que obtém a avaliação de um entidade introduzida por parâmetro, e imprime o nome da entidade, 
-     * e a avaliação média da mesma
+     * Obtém a avaliação de um entidade introduzida por parâmetro, e imprime o
+     * nome da entidade, e a avaliação média da mesma
+     *
      * @param entidade - Entidade a obter a avaliação
      */
     public void obterAvaliacaoEntidade(Entidade entidade) {
@@ -196,15 +220,17 @@ public class BomServico {
     }
 
     /**
-     * Método que lista Restaurantes com o tipo de cozinha
-     * @param tipocozinha - parâmetro a ser introduzido pelo utilizador
+     * Lista Restaurantes com o tipo de cozinha passado por parâmetro. Caso
+     * nenhum restaurante seja encontrado imprime um aviso
+     *
+     * @param tipocozinha - tipo de cozinha do restaurante
      */
     public void listaOrdenadaRest(int tipocozinha) {
         int cont = 0;
         for (Entidade elemento : retornarPorTipo("restaurante")) {
             Restaurante rest = (Restaurante) elemento;
             if (rest != null && rest.getTipoComida() == tipocozinha) {
-                System.out.println("Restaurante= " + rest.getNome() + "; preço médio= " + rest.obterPrecoMedioPorPessoa());
+                System.out.println("Restaurante: " + rest.getNome() + "; preço médio= " + rest.obterPrecoMedioPorPessoa());
                 ++cont;
             }
         }
@@ -215,16 +241,17 @@ public class BomServico {
     }
 
     /**
-     * Método que lista instâncias de Hotéis com a categoria introduzida por parâmetro pelo
-     * utilizador, de forma ordenada e com serviço de Transfer
-     * @param categoria - parâmetro introduzido pelo utilizador 
+     * Lista instâncias de Hotel da categoria passada por parâmetro que têm
+     * serviço de Transfer. Caso nenhum hotel seja encontrado imprime um aviso.
+     *
+     * @param categoria - categoria a que pertence o hotel
      */
     public void listaOrdenadaHoteis(String categoria) {
         int cont = 0;
         for (Entidade elemento : retornarPorTipo("hotel")) {
             Hotel hotel = (Hotel) elemento;
             if (hotel != null && hotel.getCategoria().equals(categoria) && hotel.validarServicoTransfer()) {
-                System.out.println( hotel.getNome() + "; tem serviço Transfer? " + hotel.validarServicoTransfer());
+                System.out.println(hotel.getNome() + "; tem serviço Transfer? " + hotel.validarServicoTransfer());
                 ++cont;
             }
         }
@@ -235,9 +262,10 @@ public class BomServico {
     }
 
     /**
-     * Método que lista instâncias de Pontos de Interesse com grau de avaliação igual ou superior 
-     * ao introduzido pelo utilizador
-     * @param grau - Grau de avaliação enviado por parâmetro, introduzido pelo utilizador
+     * Lista instâncias de PontoInteresse com grau de avaliação igual ou
+     * superior ao passado por parâmetro
+     *
+     * @param grau - Grau de avaliação do ponto de interesse
      */
     public void listaOrdenadaPI(int grau) {
         int cont = 0;

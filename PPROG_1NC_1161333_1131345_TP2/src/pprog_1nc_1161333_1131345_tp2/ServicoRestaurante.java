@@ -19,5 +19,5 @@ public interface ServicoRestaurante {
     public static final int COZINHA_ITALIANA = 2;
     public static final int COZINHA_CHINESA = 3;
     public static final int OUTRA = 4;
-       
+
 }
