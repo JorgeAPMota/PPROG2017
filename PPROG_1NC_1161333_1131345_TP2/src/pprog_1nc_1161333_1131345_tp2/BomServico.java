@@ -207,7 +207,7 @@ public class BomServico {
      * cria uma nova instância de Scanner que produz valores recebidos por input
      * do teclado
      */
-    public static Scanner in = new Scanner(System.in);
+//    public static Scanner in = new Scanner(System.in);
 
     /**
      * Obtém a avaliação de um entidade introduzida por parâmetro, e imprime o

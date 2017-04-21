@@ -74,7 +74,8 @@ public class Teste {
         bomservico.adicionaEntidade(p2);
         bomservico.adicionaEntidade(p3);
         bomservico.adicionaEntidade(p4);
-
+        bomservico.atualizarAvaliacaoEntidade(p4, 4);
+        
 //        Hostel ho3 = new Hostel("Hostel out", "Rua do Zambeze, nº33", 627893539, false, "aberto 24h");
 //        bomservico.adicionaEntidade(ho3);
 //        System.out.println("\nho3 adicionado");
@@ -88,7 +89,7 @@ public class Teste {
 //        bomservico.removeEntidade(ho4);
 //        bomservico.listar();
 //        bomservico.listaOrdenadaRest(1);
-//        bomservico.atualizarAvaliacaoEntidade(ho2, 5);
+        bomservico.atualizarAvaliacaoEntidade(ho2, 5);
 //        bomservico.obterAvaliacaoEntidade(ho3);
        
         /**
