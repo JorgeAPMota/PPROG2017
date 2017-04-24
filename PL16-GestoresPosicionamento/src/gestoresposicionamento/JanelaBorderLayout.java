@@ -43,13 +43,13 @@ public class JanelaBorderLayout extends JFrame {
         
 
         add(pNorte, BorderLayout.NORTH);
-        add(pEste, BorderLayout.EAST);
-        add(pOeste, BorderLayout.WEST);
+        add(pEste, BorderLayout.WEST);
+        add(pOeste, BorderLayout.EAST);
         add(pCentro, BorderLayout.CENTER);
         add(pSul, BorderLayout.SOUTH);
         
 
-        //        criarComponentes();
+        //criarComponentes();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(JANELA_LARGURA, JANELA_ALTURA);
         setVisible(true);
@@ -78,7 +78,7 @@ public class JanelaBorderLayout extends JFrame {
         pEste.add(btnQuatro);
         pEste.setBackground(Color.BLUE);
 
-        add(pEste, BorderLayout.EAST);
+        add(pEste, BorderLayout.WEST);
 
         return pEste;
     }
@@ -90,7 +90,7 @@ public class JanelaBorderLayout extends JFrame {
         pOeste.add(btnSeis);
         pOeste.setBackground(Color.BLUE);
 
-        add(pOeste, BorderLayout.WEST);
+        add(pOeste, BorderLayout.EAST);
 
         return pOeste;
     }
