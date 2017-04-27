@@ -4,9 +4,9 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * Representa uma janela cujo ContentPane tem um gestor de posicionamento 
+ * Representa uma janela cujo ContentPane tem um gestor de posicionamento
  * GridLayout.
- * 
+ *
  * @author ISEP-DEI-PPROG
  */
 public class JanelaGridLayout extends JFrame {
@@ -32,10 +32,28 @@ public class JanelaGridLayout extends JFrame {
 
         getContentPane().setBackground(Color.CYAN);
 
-        final int NUMERO_LINHAS=3, NUMERO_COLUNAS=3;
+        final int NUMERO_LINHAS = 3, NUMERO_COLUNAS = 3;
         GridLayout gl = new GridLayout(NUMERO_LINHAS, NUMERO_COLUNAS);
         setLayout(gl);
+
+//        /*
+//         * Adiciona e invoca o método que vai criar um Painel Cinza:
+//         */
+//        add("PainelVazioCinza", criarPainelVazioCinza());
+
+//        /*
+//        * Cria uma nova JLabel de nome teste, mas vazia, de forma a aparecer o background
+//        */
+//        JLabel teste = new JLabel();
         
+//        /*
+//        * Adiciona a JLabel ao painel
+//        */
+//        add(teste);
+        
+        /*
+         * Invoca um método que vai criar todos os outros componentes (botôes):
+         */
         criarComponentes();
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,12 +68,34 @@ public class JanelaGridLayout extends JFrame {
     private void criarComponentes() {
 
         String[] titulos = {"Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete"};
-        
+
         for (String titulo : titulos) {
             add(new JButton(titulo));
         }
-        
-    }    
+
+    }
+
+    /*
+     *Cria painel vazio cinza...
+     */
+    private JPanel criarPainelVazioCinza() {
+        JPanel pVazioCinza = new JPanel();
+
+        pVazioCinza.setBackground(Color.GRAY);
+
+        return pVazioCinza;
+    }
+
+    /*
+     *Cria painel vazio...
+     */
+    private JPanel criarPainelVazioCiano() {
+        JPanel pVazioCiano = new JPanel();
+
+        pVazioCiano.setBackground(Color.CYAN);
+
+        return pVazioCiano;
+    }
 
     /**
      * Para testar a janela JanelaGridLayout.
