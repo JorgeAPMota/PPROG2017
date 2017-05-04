@@ -15,6 +15,6 @@ package gestoreventos;
  */
 public class CentroEventos {
     
-    //stands
+    
     
 }

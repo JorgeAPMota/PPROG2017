@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.List;
 import excecaoUnchecked.Pessoa;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Teste {
@@ -21,7 +22,7 @@ public class Teste {
 
     }
 
-    private static boolean guardarEmFicheiro(List<Pessoa> lista) {
+    private static boolean guardarEmFicheiro(List<Pessoa> lista) throws FileNotFoundException {
         Formatter ficheiro;
         ficheiro = new Formatter(new File("pessoas.txt"));
         for (Pessoa p : lista) {
