@@ -14,7 +14,10 @@ public class MesInvalidoException extends IllegalArgumentException {
     public MesInvalidoException() {
         super("Mês inserido inválido");
         
-
+    /**
+     *
+     * @param msg
+     */
     public MesInvalidoException(String msg){
         super(msg);
     }
